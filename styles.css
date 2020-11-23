@@ -1,111 +1,114 @@
 * {
-	box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
-	display: flex;
-	justify-content: center;
-	margin: 0;
+    display: flex;
+    justify-content: center;
+    margin: 0;
 }
 
 .calculator {
-	width: 35%;
-	height: 90vh;
-	display: flex;
-	flex-flow: column;
-	margin: 2% 0;
-	background-color: #000;
+    flex-basis: 35%;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    margin: 2% 0;
+    background-color: #000;
 }
 
 .row {
-	width: 100%;
-	display: flex;
-	flex: 1;
+    flex: 1;
+    display: flex;
 }
 
 .first-row .cell {
-	background-color: #ddd;
-	color: #000;
+    background-color: #ddd;
+    color: #000;
 }
 
 .cell {
-	border-radius: 100px;
-	font-size: 4em;
-	font-family: arial;
-	background-color: #444;
-	margin: 1%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	color: #fff;
+    border-radius: 100px;
+    font-size: 4em;
+    font-family: arial;
+    background-color: #444;
+    margin: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
 }
 
 .cell:last-child {
-	background-color: #FA993F;
-	color: #fff;
+    background-color: #fa993f;
+    color: #fff;
 }
 
 .cell:hover {
-	background: #666;
+    background: #666;
 }
 
 .cell:active {
-	background-color: #333;
+    background-color: #333;
 }
 
-.first-row .cell:hover {
-	background-color: #eee;
+.first-row .cell:hover,
+.compound:hover {
+    background-color: #eee;
 }
 
-.first-row .cell:active {
-	background-color: #bbb;
+.first-row .cell:active,
+.compound:active {
+    background-color: #bbb;
 }
 
 .cell:last-child:focus {
-	background-color: #fbb371;
+    background-color: #fbb371;
 }
 
 .cell:last-child:hover {
-	background-color: #fbb371;
+    background-color: #fbb371;
 }
 
 .cell:last-child:active {
-	background-color: #f87f0d;
+    background-color: #f87f0d;
+}
+
+.compound {
+    background-color: #ddd;
+    color: #000;
+    font-size: 40px;
+    font-family: serif;
 }
 
 .display-numbers {
-	padding-right: 4%;
-	font-size: 6em;
-	font-family: monospace;
-	color: #fff;
-	background-color: #000;
-	display: flex;
-	justify-content: flex-end;
-	align-items: center;
+    padding-right: 4%;
+    font-size: 6em;
+    font-family: monospace;
+    color: #fff;
+    background-color: #000;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 .single-cell {
-	width: 25%;
+    flex-basis: 25%;
 }
 
 .double-cell {
-	width: 50%;
-	
+    flex-basis: 50%;
 }
 
 .triple-cell {
-	width: 75%;
-	
+    flex-basis: 75%;
 }
 
-@media only screen and (max-device-width: 500px) {
-  .calculator {
-    width: 100%;
-    height: 100vh;
-    margin: 0;
-  }
-
-  .cell {
-  	margin: 3% 1.5%;
-  }
+@media only screen and (max-width: 480px) {
+    .calculator {
+        flex: 1;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+    }
 }
