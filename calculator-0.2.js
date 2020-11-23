@@ -39,10 +39,9 @@ function buttonClick(value, tag) {
 function handleNumber(value) {
     if (
         buffer === "0" ||
-        buffer == "Total amount:" ||
-        buffer == "Interest rate(%):" ||
-        buffer == "Time (months):" ||
-        buffer == "Interval: 1.Mothly 2.Yearly"
+        buffer == "Amount:" ||
+        buffer == "Inter.(%):" ||
+        buffer == "Time(month):"
     ) {
         buffer = value;
     } else {
@@ -75,7 +74,7 @@ function handleSymbol(value) {
             break;
 
         case "C.I":
-            buffer = "Total amount:";
+            buffer = "Amount:";
             previousOperator = null;
             runningTotal = 0;
             compoundInterest = true;
@@ -132,10 +131,10 @@ function makeCompound(value) {
 function handleCompound() {
     if (!totalMount) {
         totalMount = buffer;
-        buffer = "Interest rate(%):";
+        buffer = "Inter.(%):";
     } else if (!interestRate) {
         interestRate = buffer;
-        buffer = "Time (months):";
+        buffer = "Time(month):";
     } else if (!time) {
         time = buffer;
         buffer = handleInterest() + "";
