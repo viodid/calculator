@@ -146,7 +146,7 @@ function handleInterest() {
     const intInterestRate = parseInt(interestRate);
     const intTime = parseInt(time);
     let totalInterest = 0;
-    const percentaje = 100 / intTime;
+    const percentaje = intTotalMount / intTime;
     for (let i = 0; i < intTime; i++) {
         totalInterest += intTotalMount * (intInterestRate / 100);
         intTotalMount -= percentaje;
