@@ -138,6 +138,7 @@ function handleCompound() {
     } else if (!time) {
         time = buffer;
         buffer = handleInterest() + "";
+        compoundInterest = false;
     }
 }
 
